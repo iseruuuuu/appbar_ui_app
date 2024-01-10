@@ -67,6 +67,8 @@ class NextScreen extends StatelessWidget {
               AppBar(backgroundColor: Colors.transparent),
             ],
           ),
+          
+
 
           //TODO 簡単なデザインをつける。
           const Text('Apple Grass'),
