@@ -1,3 +1,4 @@
+import 'package:appbar_ui_app/fiitedBox/fitted_box.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      // home: const MyHomePage(),
+      home: FittedBoxExample(),
     );
   }
 }
@@ -49,7 +51,7 @@ class NextScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Stack(
             children: [
@@ -68,6 +70,21 @@ class NextScreen extends StatelessWidget {
 
           //TODO 簡単なデザインをつける。
           const Text('Apple Grass'),
+          const Icon(Icons.add),
+          const Icon(Icons.add),
+          const Icon(Icons.add),
+          const Icon(Icons.add),
+
+          TextField(
+            autocorrect: false,
+          ),
+
+          Spacer(),
+          ColoredBox(
+            color: Colors.blue,
+            child: Text('hello'),
+          ),
+          Spacer(),
         ],
       ),
     );
