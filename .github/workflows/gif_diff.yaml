@@ -59,10 +59,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-
       - name: Check for modified files
         run: |
-          if  git diff --name-only --exit-code
+          if ! git diff --name-only --exit-code
           then
             exit 1
           fi
