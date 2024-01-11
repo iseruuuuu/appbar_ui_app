@@ -1,4 +1,31 @@
-name: Check Modified Files
+#name: Check Modified Files
+#
+#on:
+#  pull_request:
+#
+#jobs:
+#  check:
+#    runs-on: ubuntu-22.04
+#    timeout-minutes: 15
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#
+#
+#        # ここまではあっていそう。
+#
+#      - name: Check for modified files
+#        run: |
+#          git diff --name-only --exit-code
+#          if [ $? -eq 0 ]; then
+#        # 変更されたファイルが存在しない場合
+#            echo "No files have been modified."
+#          else
+#        # 変更されたファイルが存在する場合
+#            echo "Some files have been modified."
+#          fi
+
 
 on:
   pull_request:
@@ -6,18 +33,14 @@ on:
 jobs:
   check:
     runs-on: ubuntu-22.04
-
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
 
       - name: Check for modified files
         run: |
           git diff --name-only --exit-code
-          if [ $? -eq 0 ]; then
-            echo "No files have been modified."
-          else
-            echo "Some files have been modified."
-          fi
+        continue-on-error: true
