@@ -76,6 +76,8 @@ class NextScreen extends StatelessWidget {
           const Icon(Icons.add),
           const Icon(Icons.add),
           const Icon(Icons.add),
+          const Icon(Icons.add),
+          const Icon(Icons.add),
 
           TextField(
             autocorrect: false,
